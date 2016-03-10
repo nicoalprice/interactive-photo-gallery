@@ -1,5 +1,8 @@
 /* Create a lightbox for viewing full size images when their thumbnails are clicked. */
 
+/* Find a jQuery plugin for creating a photo gallery or write your own script.
+    The gallery must include the ability to click on photos and view them in a lightbox. */
+
 /* Add text captions to the images when viewed in the lightbox. */
 
 /* Add back and forward buttons when the lightbox is visible to switch between photos. */
