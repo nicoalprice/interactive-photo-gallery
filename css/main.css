@@ -1,0 +1,42 @@
+/* Treehouse Project #4: Interactive Photo Gallery
+by Nicoal Price */
+
+/* ======================
+    TESTING
+*/ ======================
+
+* {
+    border: 1px solid red;
+}
+
+
+/* ======================
+    GENERAL STYLES
+*/ ======================
+
+header {
+    width: 100%;
+    height: 400px;
+    background-color: white;
+}
+
+.search-box {
+    width: 460px;
+}
+
+.wrapper {
+    width: 76.5625%; /* 980px / 1280px via mockup */
+}
+
+
+/* ======================
+    MEDIA QUERIES
+*/ ======================
+
+@media screen and (min-width: 1280px) {
+
+    .wrapper {
+        max-width: 980px;
+    }
+
+}
