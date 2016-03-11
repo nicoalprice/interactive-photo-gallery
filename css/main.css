@@ -45,29 +45,20 @@ header {
     width: 76.5625%; /* 980px/1280px ratio via mockup */
     margin: 100px auto 0; /* top margin clears fixed header */
     background: yellow;
-    display: -ms-flexbox;
-    -ms-flex-wrap: wrap;
-    -ms-flex-direction: column;
-    -webkit-flex-flow: row wrap;
+    flex-direction: column;
     flex-flow: row wrap;
-    display: -webkit-box;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .wrapper div {
-    -webkit-box-flex: auto;
-    -ms-flex: auto;
     flex: auto;
-    width: 200px;
-/*    margin: .5vw;*/
+    padding: 0 30px 0;  /* 60 pixels between images*/
+    height: auto;
 }
 
-img {
-  padding: 0 30px 0;  /* 60 pixels between images*/
-/*    margin: auto;*/
-
+.wrapper div img {
     width: 100%;
-    height: auto;
 }
 
 
