@@ -44,12 +44,29 @@ header {
     width: 76.5625%; /* 980px/1280px ratio via mockup */
     margin: 100px auto 0; /* top margin clears fixed header */
     background: yellow;
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    -ms-flex-direction: column;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    display: -webkit-box;
+    display: flex;
+}
+
+.wrapper div {
+    -webkit-box-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+    width: 200px;
+    margin: .5vw;
 }
 
 img {
-    display: inline-flex;
-    padding: 0 60px 0 0; /* 60 pixels between images */
+/*    padding: 0 60px 0 0;  60 pixels between images
     margin: auto;
+*/
+width: 100%;
+height: auto;
 }
 
 
@@ -64,8 +81,10 @@ img {
         max-width: 980px;
     }
 
+/*
     img {
         max-width: 25%;
     }
+*/
 
 }
