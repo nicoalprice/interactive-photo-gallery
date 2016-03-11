@@ -36,12 +36,12 @@ header {
 }
 
 
-/* ======================
+/*  ======================
     GALLERY
- ====================== */
+    ====================== */
 
 .wrapper {
-    width: 76.5625%; /* 980px / 1280px via mockup */
+    width: 76.5625%; /* 980px/1280px ratio via mockup */
     margin: 100px auto 0; /* top margin clears fixed header */
     background: yellow;
 }
@@ -53,9 +53,9 @@ img {
 }
 
 
-/* ======================
+/*  ======================
     MEDIA QUERIES
- ====================== */
+    ====================== */
 
 
 @media screen and (min-width: 768px) {
