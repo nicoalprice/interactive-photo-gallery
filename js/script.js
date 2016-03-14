@@ -9,11 +9,13 @@ var $overlay = $("<div id='overlay'></div>");
  /* Add overlay to body of index.html */
 $("body").append($overlay);
 
-/* Get url for images. */
-
-$("#gallery li a").click(function( event ) {
-    event.preventDefault(); /* stop click from linking to img url */
-    var $href = $(this).attr("href"); /* get image's url */
+/* When a thumbnail is clicked... */
+$("#gallery li a").click(function(event) {
+    /* ...stop click from linking to img url */
+    event.preventDefault();
+    /* ...get image's url */
+    var $href = $(this).attr("href");
+    /* ...show the overlay */
     $overlay.show();
 });
 
