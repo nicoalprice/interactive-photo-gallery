@@ -9,6 +9,12 @@
     box-sizing: border-box;
 }
 
+ul, li {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+}
+
 
 /* ======================
     HEADER
@@ -47,25 +53,21 @@ header {
     width: 76.5625%; /* 980px/1280px ratio via mockup */
     margin: 100px auto 0; /* top margin clears fixed header */
     background: yellow;
-    flex-direction: column;
-    flex-flow: row wrap;
-    display: flex;
-    flex-wrap: wrap;
 }
 
-.wrapper div {
-    flex: auto;
-/*    margin-right: -60px;*/
+.gallery {
     overflow: hidden;
-    justify-content: space-between;
+    margin-right: -60px;
 }
 
-.wrapper div img {
-    height: auto;
-/*    padding-right: 60px;  */
-    justify-content: space-between;
-/*    width: calc(100%-60px);*/
-    margin: auto;
+ul .images {
+    padding: 0;
+}
+
+.images li {
+    padding-right: 60px;
+    border: 1px solid red;
+    width: calc(((200/1280) * 100) + 60px);
 }
 
 
