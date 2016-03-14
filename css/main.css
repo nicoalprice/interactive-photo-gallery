@@ -73,6 +73,14 @@ header {
     width: calc(100% - 60px);
 }
 
+/* =======================
+    OVERLAY
+========================== */
+
+#overlay {
+    background: black;
+    z-index: 100;
+}
 
 /* =======================
     MEDIA QUERIES

@@ -3,10 +3,17 @@
 /* Find a jQuery plugin for creating a photo gallery or write your own script.
     The gallery must include the ability to click on photos and view them in a lightbox. */
 
+/* Add overlay. */
+var $overlay = $("<div id='overlay'></div>");
+
+$("body").append($overlay);
+
+/* Get url for images. */
+
 $("#gallery li a").click(function( event ) {
     event.preventDefault(); /* stop click from linking to img url */
     var href = $(this).attr("href"); /* get image's url */
-    console.log(href);
+    $overlay.show();
 });
 
 /* Add text captions to the images when viewed in the lightbox. */
