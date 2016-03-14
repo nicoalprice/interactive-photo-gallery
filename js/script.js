@@ -3,8 +3,9 @@
 /* Find a jQuery plugin for creating a photo gallery or write your own script.
     The gallery must include the ability to click on photos and view them in a lightbox. */
 
-$("#gallery a").click(function() {
-    var href = $(this).value("href");
+$("#gallery li a").click(function( event ) {
+    event.preventDefault(); /* stop click from linking to img url */
+    var href = $(this).attr("href"); /* get image's url */
     console.log(href);
 });
 
