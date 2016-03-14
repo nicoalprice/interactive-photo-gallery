@@ -50,24 +50,27 @@ header {
 ========================== */
 
 .wrapper {
-    width: 76.5625%; /* 980px/1280px ratio via mockup */
+    width: 980px;/* 980px/1280px ratio via mockup */
     margin: 100px auto 0; /* top margin clears fixed header */
     background: yellow;
 }
 
-.gallery {
+#gallery {
     overflow: hidden;
-    margin-right: -60px;
-}
-
-ul .images {
-    padding: 0;
+    width: 980px;
+    border: 1px solid green;
+    margin-right: -5px;
+    float: left;
 }
 
 .images li {
+    float: left;
     padding-right: 60px;
+    padding-left: 0;
+    margin-left: 0;
+    font-size: 0;
     border: 1px solid red;
-    width: calc(((200/1280) * 100) + 60px);
+    width: calc(100% - 60px);
 }
 
 
