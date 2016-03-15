@@ -56,13 +56,8 @@ $("#gallery li a").click(function(event) {
 
 
 /* Hide overlay when exit button is clicked. */
-
-//$("#exit").click(function() {
-//    $overlay.fadeOut(1000);
-//    $overlay.hide();
-//});
-
 $exit.on("click", function() {
+    $overlay.fadeOut(1000);
     $overlay.hide();
 });
 

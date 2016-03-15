@@ -118,8 +118,8 @@ input {
 }
 
 #exit {
-    color: yellow;
-    font-size: 5em;
+    color: white;
+    font-size: 3em;
     position: absolute;
     top: 0;
     right: 0;
