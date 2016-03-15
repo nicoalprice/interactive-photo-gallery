@@ -10,6 +10,8 @@
 var $overlay = $("<div id='overlay'></div>");
 var $fullImage = $("<img>");
 var $caption = $("<p></p>");
+var $exit = $('<button id="exit">X</button>');
+
 
 /* Add overlay to body of index.html */
 $("body").append($overlay);
@@ -43,6 +45,9 @@ $("#gallery li a").click(function(event) {
     /* Link right arrow to next image */
     /* Link left arrow to previous image */
 
+    /* Add exit button. */
+    $overlay.append($exit);
+
 
     /* show the overlay */
     $overlay.fadeIn(1500);
@@ -50,9 +55,14 @@ $("#gallery li a").click(function(event) {
 });
 
 
-/** Hide Overlay **/
-$overlay.click(function() {
-    $overlay.fadeOut(1000);
+/* Hide overlay when exit button is clicked. */
+
+//$("#exit").click(function() {
+//    $overlay.fadeOut(1000);
+//    $overlay.hide();
+//});
+
+$exit.on("click", function() {
     $overlay.hide();
 });
 
