@@ -35,7 +35,7 @@ $("#gallery li a").click(function(event) {
     $overlay.append($caption);
 
     /* show the overlay */
-    $overlay.show();
+    $overlay.fadeIn(1500);
 
 });
 
@@ -44,7 +44,7 @@ $("#gallery li a").click(function(event) {
 
 /** Hide Overlay **/
 $overlay.click(function() {
-    $overlay.hide();
+    $overlay.fadeOut(1000);
 });
 
 
