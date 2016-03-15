@@ -43,7 +43,31 @@ $("#gallery li a").click(function(event) {
     $overlay.append($nextArrow);
 
     /* Link right arrow to next image */
+    $nextArrow.click(function(event) {
+        $fullImage.next("img").attr("src", $imageLocation);
+    });
+
     /* Link left arrow to previous image */
+     $prevArrow.click(function(event) {
+        $fullImage.prev("img").attr("src", $imageLocation);
+    });
+//
+//    //Creating buttons
+//    $prevArrow.click(function() {
+//        $newImg = $("#imageGallery .selected").prev("a");
+//        $newImgLocation = $newImg.attr("href");
+//        $newImg.next().removeClass("selected");  //remove class
+//        $newImg.addClass("selected");            //add clas
+//        $image.attr("src", $newImgLocation);
+//    });
+//
+//    $nextArrow.click(function() {
+//        newImg = $("#imageGallery .selected").next("a");
+//        newImgLocation = newImg.attr("href");
+//        newImg.prev().removeClass("selected");  //remove class
+//        newImg.addClass("selected");            //add class
+//        $image.attr("src", newImgLocation);
+//    });
 
     /* Add exit button. */
     $overlay.append($exit);
