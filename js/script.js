@@ -5,6 +5,8 @@
 
 var $overlay = $("<div id='overlay'></div>");
 var $fullImage = $("<img>");
+var $caption = $("<p></p>");
+
 
 
 /* OVERLAY */
@@ -24,6 +26,14 @@ $("#gallery li a").click(function(event) {
     $overlay.append($fullImage);
     $fullImage.attr("src", $imageLocation);
 
+
+    /* Add text captions to the images when viewed in the lightbox. */
+    $overlay.append($caption);
+
+    /* Get alt text to use for captions. */
+    var $captionText = $(this).children("img").attr("alt");
+    $caption.text($captionText);
+
     /* show the overlay */
     $overlay.show();
 
@@ -32,10 +42,10 @@ $("#gallery li a").click(function(event) {
 
 /* CAPTIONS */
 /* Add text captions to the images when viewed in the lightbox. */
+$overlay.append($caption);
 
 /* Get alt text to use for captions. */
-var $caption = $("#gallery li alt").attr("alt");
-
+var captionText = $(this).children("img").attr("alt");
 
 /* NAVIGATION BUTTONS */
 /* Add back and forward buttons when the lightbox is visible to switch between photos. */
