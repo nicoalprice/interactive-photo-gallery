@@ -10,7 +10,7 @@
 var $overlay = $("<div id='overlay'></div>");
 var $fullImage = $("<img>");
 var $caption = $("<p></p>");
-var $exit = $('<button id="exit">X</button>');
+var $exit = $('<button id="exit">exit</button>');
 
 
 /* Add overlay to body of index.html */
