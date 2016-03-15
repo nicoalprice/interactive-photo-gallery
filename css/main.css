@@ -98,6 +98,25 @@ input {
     width: 46.875%; /* 600/1280px */
     margin: 60px auto 0;
 }
+#prevArrow,
+#nextArrow {
+    color: white;
+    font-size: 6em;
+    position: absolute;
+    top: 300px;
+    background: rgba(0,0,0,0);
+}
+
+#prevArrow {
+    left: 0;
+    border: 3px solid pink;
+}
+
+#nextArrow {
+    right: 0;
+    border: 3px solid orange;
+}
+
 
 /* =======================
     MEDIA QUERIES

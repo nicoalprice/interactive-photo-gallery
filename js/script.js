@@ -34,17 +34,26 @@ $("#gallery li a").click(function(event) {
     /* Add text captions to the images when viewed in the lightbox. */
     $overlay.append($caption);
 
+    /* Add back and forward navigation buttons when the lightbox is visible to switch between photos. */
+    var $prevArrow = $('<button id="prevArrow"><</button>')
+    var $nextArrow = $('<button id="nextArrow">></button>');
+    $overlay.append($prevArrow);
+    $overlay.append($nextArrow);
+
+    /* Link right arrow to next image */
+    /* Link left arrow to previous image */
+
+
     /* show the overlay */
     $overlay.fadeIn(1500);
 
 });
 
-/** Navigation Buttons **/
-/* Add back and forward buttons when the lightbox is visible to switch between photos. */
 
 /** Hide Overlay **/
 $overlay.click(function() {
     $overlay.fadeOut(1000);
+    $overlay.hide();
 });
 
 
