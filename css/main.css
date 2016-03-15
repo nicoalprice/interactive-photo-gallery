@@ -53,16 +53,13 @@ header {
 ========================== */
 
 .wrapper {
-    width: 200px; /* 980px/1280px ratio via mockup */
+    width: 200px; /* one column */
     margin: 100px auto 0; /* top margin clears fixed header */
-    background: yellow;
 }
 
 #gallery {
     margin-top: 0;
     margin-right: -60px;
-/*    overflow: hidden;*/
-/*    width: 100%;*/
 }
 
 #gallery li {
@@ -70,7 +67,6 @@ header {
     padding-bottom: 60px;
     width: 260px;
     margin-right: -5px;
-    border: 1px solid purple;
 }
 
 
@@ -107,18 +103,18 @@ header {
     MEDIA QUERIES
 ========================== */
 
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 580px) {
 
     .wrapper {
-        width: 460px;
+        width: 460px; /* two columns */
     }
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 840px) {
 
     .wrapper {
-        width: 720px;
+        width: 720px; /* three columns */
     }
 
     #overlay img {
@@ -128,9 +124,9 @@ header {
 
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1100px) {
 
     .wrapper {
-        width: 980px;
+        width: 980px; /* four columns */
     }
 }
