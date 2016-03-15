@@ -9,7 +9,9 @@
     box-sizing: border-box;
 }
 
-ul, li {
+ul,
+li,
+a {
     list-style: none;
     display: inline-block;
     padding: 0;
@@ -42,7 +44,7 @@ header {
     width: 100%;
     border-radius: 3px;
     border: 1px solid black;
-    background-color: lightgrey;
+    background: lightgrey;
 }
 
 
@@ -54,21 +56,21 @@ header {
     width: 200px; /* 980px/1280px ratio via mockup */
     margin: 100px auto 0; /* top margin clears fixed header */
     background: yellow;
-    font-size: 0;
 }
 
 #gallery {
     margin-top: 0;
     margin-right: -60px;
-    overflow: hidden;
-    width: 100%;
-    font-size: 0;
+/*    overflow: hidden;*/
+/*    width: 100%;*/
 }
 
 #gallery li {
     padding-right: 60px;
+    padding-bottom: 60px;
     width: 260px;
-    font-size: 0;
+    margin-right: -5px;
+    border: 1px solid purple;
 }
 
 
