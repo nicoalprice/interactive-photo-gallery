@@ -40,7 +40,6 @@ header {
 
 .search-box input {
     margin: auto;
-    background: blue;
     width: 100%;
     border-radius: 3px;
     border: 1px solid black;
@@ -86,16 +85,16 @@ header {
 }
 
 #overlay img {
-    margin-top: 100px;
-    margin-left: 10%;
-    width: 80%;
+    display: block;
+    margin: 100px auto 0;
+    width: 75%;
+    max-width: 800px;
 }
 
 #overlay p {
     color: white;
     width: 46.875%; /* 600/1280px */
-    margin: auto;
-    margin-top: 60px;
+    margin: 60px auto 0;
     border: 2px solid yellow;
 }
 
@@ -115,11 +114,6 @@ header {
 
     .wrapper {
         width: 720px; /* three columns */
-    }
-
-    #overlay img {
-        margin-left: 18.75%;
-        width: 62.5%; /* 800/1280px via mockup dimensions */
     }
 
 }
