@@ -3,20 +3,30 @@
 /* Find a jQuery plugin for creating a photo gallery or write your own script.
     The gallery must include the ability to click on photos and view them in a lightbox. */
 
+var $overlay = $("<div id='overlay'></div>");
+var $fullImage = $("<img>");
+
 
 /* OVERLAY */
-var $overlay = $("<div id='overlay'></div>");
- /* Add overlay to body of index.html */
+/* Add overlay to body of index.html */
 $("body").append($overlay);
 
 /* When a thumbnail is clicked... */
 $("#gallery li a").click(function(event) {
-    /* ...stop click from linking to img url */
+
+    /* stop click from opening img url */
     event.preventDefault();
-    /* ...get image's url */
-    var $href = $(this).attr("href");
-    /* ...show the overlay */
+
+    /* get image's url */
+    var $imageLocation = $(this).attr("href");
+
+    /* update image */
+    $overlay.append($fullImage);
+    $fullImage.attr("src", $imageLocation);
+
+    /* show the overlay */
     $overlay.show();
+
 });
 
 
@@ -32,7 +42,9 @@ var $caption = $("#gallery li alt").attr("alt");
 
 
 /* HIDE OVERLAY */
-
+$overlay.click(function() {
+    $overlay.hide();
+});
 
 /* SEARCH BOX */
 /* Implement the search box at the top of the page that filters photos based on the captions.
