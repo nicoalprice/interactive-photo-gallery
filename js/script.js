@@ -19,7 +19,7 @@ var $nextArrow = $('<button id="nextArrow">></button>');
 $("body").append($overlay);
 
 /* When a thumbnail is clicked... */
-$("#gallery li a").click(function(event) {
+$("#gallery a").click(function(event) {
 
     /* stop click from opening img url */
     event.preventDefault();
@@ -27,10 +27,15 @@ $("#gallery li a").click(function(event) {
     /* get image's url */
     var $imageLocation = $(this).attr("href");
 
-    /* update image */
+    /* add image to overlay */
     $overlay.append($image);
+
+    /* get img location */
     $image.attr("src", $imageLocation);
-    $(this).addClass("selected");
+
+    /* add .selected class to current image */
+    var $currentImage = $(this);
+    $currentImage.addClass("selected");
 
     /* Get alt text to use for captions. */
     var $captionText = $(this).children("img").attr("alt");
@@ -43,22 +48,28 @@ $("#gallery li a").click(function(event) {
     $overlay.append($prevArrow);
     $overlay.append($nextArrow);
 
-      /* Link right arrow to next image */
-    $nextArrow.on("click", function() {
-        var newImg = $("#gallery .selected").next("a");
-        var newImgLocation = newImg.attr("href");
-        newImg.next().removeClass("selected");  //remove class
-        newImg.addClass("selected");            //add class
-        $image.attr("src", newImgLocation);
-    });
 
     /* Link left arrow to previous image */
-    $prevArrow.on("click", function() {
-        var newImg = $("#gallery .selected").prev("a");
-        var newImgLocation = newImg.attr("href");
-        newImg.prev().removeClass("selected");  //remove class
-        newImg.addClass("selected");            //add class
-        $image.attr("src", newImgLocation);
+     $prevArrow.on("click", function() {
+        var $prevImg = $(".selected").prev("a"); // find next link
+        var $prevImgLocation = $newImg.attr("href"); // set new image location
+        $prevImg.next().removeClass("selected");  //remove class
+        $prevImg.addClass("selected");            //add class
+        $image.attr("src", $prevImgLocation);
+    });
+
+    /* Link right arrow to next image */
+    $nextArrow.on("click", function() {
+        /* find next link */
+        var $nextImg = $(".selected").next("a");
+        /* set new image location */
+        var $nextImgLocation = $newImg.attr("href");
+        /* remove selected class from previous image */
+        $nextImg.prev().removeClass("selected");
+        /* add selected class to new image */
+        $nextImg.addClass("selected");
+        /* update display image */
+        $image.attr("src", $nextImgLocation);
     });
 
 

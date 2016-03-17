@@ -105,16 +105,15 @@ input {
     position: absolute;
     top: 300px;
     background: rgba(0,0,0,0);
+    border: 2px solid white;
 }
 
 #prevArrow {
     left: 0;
-    border: 3px solid pink;
 }
 
 #nextArrow {
     right: 0;
-    border: 3px solid orange;
 }
 
 #exit {

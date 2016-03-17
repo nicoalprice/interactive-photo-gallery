@@ -12,13 +12,13 @@
 
         <header>
             <form class="search-box">
-                <input type="text" placeholder="Search...">
+                <input id="search" name="search" placeholder="Search..." type="text" data-list=".list">
             </form>
         </header>
 
         <div class="wrapper">
 
-            <ul id="gallery">
+            <ul id="gallery" class="list">
                 <li><a href="images/01.jpg"><img src="images/thumbnails/01.jpg"
                 alt="Hay Bales. I love hay bales. Took this snap on a drive through the countryside past some straw fields." /></a></li>
 
@@ -62,6 +62,7 @@
 
         <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="js/script.js"></script>
+        <script src="js/search.js"></script>
 
     </body>
 </html>
