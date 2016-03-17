@@ -8,9 +8,11 @@
 /*** OVERLAY ***/
 
 var $overlay = $("<div id='overlay'></div>");
-var $fullImage = $("<img>");
+var $image = $("<img>");
 var $caption = $("<p></p>");
 var $exit = $('<button id="exit">exit</button>');
+var $prevArrow = $('<button id="prevArrow"><</button>')
+var $nextArrow = $('<button id="nextArrow">></button>');
 
 
 /* Add overlay to body of index.html */
@@ -26,8 +28,8 @@ $("#gallery li a").click(function(event) {
     var $imageLocation = $(this).attr("href");
 
     /* update image */
-    $overlay.append($fullImage);
-    $fullImage.attr("src", $imageLocation);
+    $overlay.append($image);
+    $image.attr("src", $imageLocation);
 
     /* Get alt text to use for captions. */
     var $captionText = $(this).children("img").attr("alt");
@@ -37,41 +39,27 @@ $("#gallery li a").click(function(event) {
     $overlay.append($caption);
 
     /* Add back and forward navigation buttons when the lightbox is visible to switch between photos. */
-    var $prevArrow = $('<button id="prevArrow"><</button>')
-    var $nextArrow = $('<button id="nextArrow">></button>');
     $overlay.append($prevArrow);
     $overlay.append($nextArrow);
 
     /* Link right arrow to next image */
-    $nextArrow.click(function(event) {
-        $fullImage.next("img").attr("src", $imageLocation);
+    $nextArrow.on("click", function(event) {
+        $image = $image.next("src");
+        $imageLocation = $image.next().attr("href");
+        $image.attr("src", $imageLocation);
+        $overlay.append($image);
     });
 
     /* Link left arrow to previous image */
-     $prevArrow.click(function(event) {
-        $fullImage.prev("img").attr("src", $imageLocation);
+    $prevArrow.on("click", function(event) {
+        $image = $image.prev("src");
+        $imageLocation = $image.prev().attr("href");
+        $image.attr("src", $imageLocation);
+        $overlay.append($image);
     });
-//
-//    //Creating buttons
-//    $prevArrow.click(function() {
-//        $newImg = $("#imageGallery .selected").prev("a");
-//        $newImgLocation = $newImg.attr("href");
-//        $newImg.next().removeClass("selected");  //remove class
-//        $newImg.addClass("selected");            //add clas
-//        $image.attr("src", $newImgLocation);
-//    });
-//
-//    $nextArrow.click(function() {
-//        newImg = $("#imageGallery .selected").next("a");
-//        newImgLocation = newImg.attr("href");
-//        newImg.prev().removeClass("selected");  //remove class
-//        newImg.addClass("selected");            //add class
-//        $image.attr("src", newImgLocation);
-//    });
 
     /* Add exit button. */
     $overlay.append($exit);
-
 
     /* show the overlay */
     $overlay.fadeIn(1500);
