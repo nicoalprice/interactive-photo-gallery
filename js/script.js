@@ -30,6 +30,7 @@ $("#gallery li a").click(function(event) {
     /* update image */
     $overlay.append($image);
     $image.attr("src", $imageLocation);
+    $(this).addClass("selected");
 
     /* Get alt text to use for captions. */
     var $captionText = $(this).children("img").attr("alt");
@@ -42,21 +43,24 @@ $("#gallery li a").click(function(event) {
     $overlay.append($prevArrow);
     $overlay.append($nextArrow);
 
-    /* Link right arrow to next image */
-    $nextArrow.on("click", function(event) {
-        $image = $image.next("src");
-        $imageLocation = $image.next().attr("href");
-        $image.attr("src", $imageLocation);
-        $overlay.append($image);
+      /* Link right arrow to next image */
+    $nextArrow.on("click", function() {
+        var newImg = $("#gallery .selected").next("a");
+        var newImgLocation = newImg.attr("href");
+        newImg.next().removeClass("selected");  //remove class
+        newImg.addClass("selected");            //add class
+        $image.attr("src", newImgLocation);
     });
 
     /* Link left arrow to previous image */
-    $prevArrow.on("click", function(event) {
-        $image = $image.prev("src");
-        $imageLocation = $image.prev().attr("href");
-        $image.attr("src", $imageLocation);
-        $overlay.append($image);
+    $prevArrow.on("click", function() {
+        var newImg = $("#gallery .selected").prev("a");
+        var newImgLocation = newImg.attr("href");
+        newImg.prev().removeClass("selected");  //remove class
+        newImg.addClass("selected");            //add class
+        $image.attr("src", newImgLocation);
     });
+
 
     /* Add exit button. */
     $overlay.append($exit);
