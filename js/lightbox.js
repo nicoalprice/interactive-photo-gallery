@@ -24,18 +24,17 @@ $("#gallery a").click(function(event) {
     /* stop click from opening img url */
     event.preventDefault();
 
-    /* get image's url */
+    /* get image's location */
     var $imageLocation = $(this).attr("href");
 
     /* add image to overlay */
     $overlay.append($image);
 
-    /* get img location */
+    /* set displayed image's location */
     $image.attr("src", $imageLocation);
 
     /* add .selected class to current image */
-    var $currentImage = $(this);
-    $currentImage.addClass("selected");
+    $(this).addClass("selected");
 
     /* get alt text to use for captions. */
     var $captionText = $(this).children("img").attr("alt");
@@ -44,12 +43,11 @@ $("#gallery a").click(function(event) {
     /* add text captions to the images when viewed in the lightbox. */
     $overlay.append($caption);
 
-    /* add back and forward navigation buttons when the lightbox is visible to switch between photos. */
+    /* add back and forward navigation buttons when lightbox is visible */
     $overlay.append($prevArrow);
     $overlay.append($nextArrow);
 
-
-    /* link left arrow to previous image */
+      /* link left arrow to previous image */
      $prevArrow.on("click", function() {
         var $prevImg = $(".selected").prev("a"); // find next link
         var $prevImgLocation = $prevImg.attr("href"); // set new image location
@@ -71,7 +69,6 @@ $("#gallery a").click(function(event) {
         /* update display image */
         $image.attr("src", $nextImgLocation);
     });
-
 
     /* add exit button. */
     $overlay.append($exit);
