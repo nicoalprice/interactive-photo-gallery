@@ -37,33 +37,33 @@ $("#gallery a").click(function(event) {
     var $currentImage = $(this);
     $currentImage.addClass("selected");
 
-    /* Get alt text to use for captions. */
+    /* get alt text to use for captions. */
     var $captionText = $(this).children("img").attr("alt");
     $caption.text($captionText);
 
-    /* Add text captions to the images when viewed in the lightbox. */
+    /* add text captions to the images when viewed in the lightbox. */
     $overlay.append($caption);
 
-    /* Add back and forward navigation buttons when the lightbox is visible to switch between photos. */
+    /* add back and forward navigation buttons when the lightbox is visible to switch between photos. */
     $overlay.append($prevArrow);
     $overlay.append($nextArrow);
 
 
-    /* Link left arrow to previous image */
+    /* link left arrow to previous image */
      $prevArrow.on("click", function() {
         var $prevImg = $(".selected").prev("a"); // find next link
-        var $prevImgLocation = $newImg.attr("href"); // set new image location
+        var $prevImgLocation = $prevImg.attr("href"); // set new image location
         $prevImg.next().removeClass("selected");  //remove class
         $prevImg.addClass("selected");            //add class
         $image.attr("src", $prevImgLocation);
     });
 
-    /* Link right arrow to next image */
+    /* link right arrow to next image */
     $nextArrow.on("click", function() {
         /* find next link */
         var $nextImg = $(".selected").next("a");
         /* set new image location */
-        var $nextImgLocation = $newImg.attr("href");
+        var $nextImgLocation = $nextImg.attr("href");
         /* remove selected class from previous image */
         $nextImg.prev().removeClass("selected");
         /* add selected class to new image */
@@ -73,7 +73,7 @@ $("#gallery a").click(function(event) {
     });
 
 
-    /* Add exit button. */
+    /* add exit button. */
     $overlay.append($exit);
 
     /* show the overlay */
@@ -82,16 +82,9 @@ $("#gallery a").click(function(event) {
 });
 
 
-/* Hide overlay when exit button is clicked. */
+/* hide overlay when exit button is clicked. */
 $exit.on("click", function() {
     $overlay.fadeOut(1000);
     $overlay.hide();
 });
-
-
-/*** SEARCH BOX ***/
-/* Implement the search box at the top of the page that filters photos based on the captions.
-    - The photos should filter in real-time as you type.
-    - This could be a jQuery plugin that you find on the web, or code that you write yourself. */
-
 

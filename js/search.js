@@ -1,3 +1,9 @@
+/*** SEARCH BOX ***/
+/* Implement the search box at the top of the page that filters photos based on the captions.
+    - The photos should filter in real-time as you type.
+    - This could be a jQuery plugin that you find on the web, or code that you write yourself. */
+
+
 /* after key is pressed */
 $("#search").keyup(function() {
 
