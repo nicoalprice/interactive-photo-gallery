@@ -8,7 +8,7 @@
 /*** OVERLAY ***/
 
 var $overlay = $("<div id='overlay'></div>");
-var $image = $("<img>");
+var $image = $("<img class='overlay-image'>");
 var $caption = $("<p></p>");
 var $exit = $('<button id="exit">exit</button>');
 var $prevArrow = $('<button id="prevArrow"><</button>')
@@ -24,62 +24,88 @@ $("#gallery a").click(function(event) {
     /* stop click from opening img url */
     event.preventDefault();
 
-    /* get image's location */
-    var $imageLocation = $(this).attr("href");
+     // call the function that captures information about the image container clicked on
+    getCurrentImage(this);
 
     /* add image to overlay */
     $overlay.append($image);
 
-    /* set displayed image's location */
-    $image.attr("src", $imageLocation);
-
-    /* add .selected class to current image */
-    $(this).addClass("selected");
-
     /* get alt text to use for captions. */
-    var $captionText = $(this).children("img").attr("alt");
-    $caption.text($captionText);
+//    var $captionText = $(this).children("img").attr("alt");
+//    $caption.text($captionText);
 
     /* add text captions to the images when viewed in the lightbox. */
     $overlay.append($caption);
 
     /* add back and forward navigation buttons when lightbox is visible */
-    $overlay.append($prevArrow);
-    $overlay.append($nextArrow);
+    $image.after($prevArrow);
+    $image.before($nextArrow);
 
-      /* link left arrow to previous image */
-     $prevArrow.on("click", function() {
-        var $prevImg = $(".selected").prev("a"); // find next link
-        var $prevImgLocation = $prevImg.attr("href"); // set new image location
-        $prevImg.next().removeClass("selected");  //remove class
-        $prevImg.addClass("selected");            //add class
-        $image.attr("src", $prevImgLocation);
-    });
-
-    /* link right arrow to next image */
-    $nextArrow.on("click", function() {
-        /* find next link */
-        var $nextImg = $(".selected").next("a");
-        /* set new image location */
-        var $nextImgLocation = $nextImg.attr("href");
-        /* remove selected class from previous image */
-        $nextImg.prev().removeClass("selected");
-        /* add selected class to new image */
-        $nextImg.addClass("selected");
-        /* update display image */
-        $image.attr("src", $nextImgLocation);
-    });
-
-    /* add exit button. */
+      /* add exit button. */
     $overlay.append($exit);
 
     /* show the overlay */
     $overlay.fadeIn(1500);
-
 });
 
+/* When the next button is clicked... */
+    $nextArrow.on("click", function(event) {
+    // call the function that captures information about the next image inline to be shown
+    getNextImage();
+    // show the next image
+    $image.show();
+    $caption.show();
+});
 
-/* hide overlay when exit button is clicked. */
+/* When the previous button is clicked... */
+$prevArrow.on("click", function(event){
+    getPreviousImage();
+    // show the previous image
+    $image.show();
+    $caption.show();
+});
+
+// Retreive the image container that was clicked on.
+function getCurrentImage(currentImage) {
+    // identify the child of the image container
+    thisImage = $(currentImage);
+    // capture the href & src information of the image that was clicked
+    thisImageLocation = $(thisImage).attr("href");
+    // update the overlay image info to reflect the image that was clicked
+    $image.attr("src", thisImageLocation);
+    // get current image's caption
+    var $captionText = thisImage.children("img").attr("alt");
+    $caption.text($captionText);
+}
+
+function getNextImage() {
+    // get the image container of the next image
+    nextImageParent = $(thisImage).parent().next();
+    //identify the child of the next image container
+    nextImage = $(nextImageParent).children("a");
+    //capture the href & src information of the next image
+    nextImageLocation = $(nextImage).attr("href");
+    // update your overlay image info to reflect the next image
+    $image.attr("src", nextImageLocation);
+    //call the function that captures information about your new current image
+    getCurrentImage(nextImageParent);
+}
+
+function getPreviousImage() {
+    // get the image container of the previous image
+    prevImageParent = $(thisImage).parent().prev();
+    // identify the child of the previous image container
+    prevImage = $(prevImageParent).children("a");
+    // capture the href & src information of the previous image
+    prevImageLocation = $(prevImage).attr("href");
+    // update the overlay image info to reflect the previous image
+    $image.attr("src", prevImageLocation);
+    //call the function that captures information about your new current image
+    getCurrentImage(prevImageParent);
+}
+
+
+/* Hide overlay when exit button is clicked. */
 $exit.on("click", function() {
     $overlay.fadeOut(1000);
     $overlay.hide();
