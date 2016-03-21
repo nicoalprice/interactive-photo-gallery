@@ -65,6 +65,14 @@ $prevArrow.on("click", function(event){
     $caption.show();
 });
 
+/* Hide overlay when exit button is clicked. */
+$exit.on("click", function() {
+    $overlay.fadeOut(1000);
+    $overlay.hide();
+});
+
+/* FUNCTIONS */
+
 // Retreive the image container that was clicked on.
 function getCurrentImage(currentImage) {
     // identify the child of the image container
@@ -103,11 +111,4 @@ function getPreviousImage() {
     //call the function that captures information about your new current image
     getCurrentImage(prevImageParent);
 }
-
-
-/* Hide overlay when exit button is clicked. */
-$exit.on("click", function() {
-    $overlay.fadeOut(1000);
-    $overlay.hide();
-});
 
