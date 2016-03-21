@@ -71,9 +71,8 @@ $exit.on("click", function() {
     $overlay.hide();
 });
 
-/* FUNCTIONS */
+/*** FUNCTIONS ***/
 
-// Retreive the image container that was clicked on.
 function getCurrentImage(currentImage) {
     // identify the child of the image container
     thisImage = $(currentImage);
@@ -95,7 +94,7 @@ function getNextImage() {
     nextImageLocation = $(nextImage).attr("href");
     // update your overlay image info to reflect the next image
     $image.attr("src", nextImageLocation);
-    //call the function that captures information about your new current image
+    //call function to capture information about new current image
     getCurrentImage(nextImageParent);
 }
 
@@ -108,7 +107,7 @@ function getPreviousImage() {
     prevImageLocation = $(prevImage).attr("href");
     // update the overlay image info to reflect the previous image
     $image.attr("src", prevImageLocation);
-    //call the function that captures information about your new current image
+    //call function to capture information about new current image
     getCurrentImage(prevImageParent);
 }
 
