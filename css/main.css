@@ -103,7 +103,7 @@ input {
     color: white;
     font-size: 4em;
     position: absolute;
-    top: calc(100px + 30%);
+    top: calc(100px + 30%); /* parse error? */
     background: rgba(0,0,0,0);
     border: 2px solid white;
 }

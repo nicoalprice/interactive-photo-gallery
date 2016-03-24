@@ -11,7 +11,7 @@ var $overlay = $("<div id='overlay'></div>");
 var $image = $("<img class='overlay-image'>");
 var $caption = $("<p></p>");
 var $exit = $('<button id="exit">exit</button>');
-var $prevArrow = $('<button id="prevArrow"><</button>')
+var $prevArrow = $('<button id="prevArrow"><</button>');
 var $nextArrow = $('<button id="nextArrow">></button>');
 /* Keep track of image index for arrow buttons */
 var $index = 0;
