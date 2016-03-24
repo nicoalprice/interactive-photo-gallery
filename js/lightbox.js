@@ -52,25 +52,15 @@ $("#gallery a").click(function(event) {
     $overlay.fadeIn(1500);
 });
 
-
-/*** FUNCTIONS ***/
-
-function updateImage(imageLocation, imageCaption) {
-    /* update image source */
-    $image.attr("src", imageLocation);
-    /* set caption text */
-    $caption.text(imageCaption);
-}
-
 /* When the next button is clicked... */
     $nextArrow.on("click", function(event) {
     /* update index */
     $index++;
     /* use index to get next image */
-    var newImage = $("#gallery li").get($index).getElementsByTagName("a");
+    var nextImage = $("#gallery li").get($index).getElementsByTagName("a");
     /* get new image location and caption */
-    var imageLocation = $(newImage).attr("href");
-    var imageCaption =  $(newImage).children("img").attr("alt");
+    var imageLocation = $(nextImage).attr("href");
+    var imageCaption =  $(nextImage).children("img").attr("alt");
     /* update the overlay image */
     updateImage(imageLocation, imageCaption);
 });
@@ -93,3 +83,12 @@ $exit.on("click", function() {
     $overlay.fadeOut(1000);
     $overlay.hide();
 });
+
+/*** FUNCTIONS ***/
+
+function updateImage(imageLocation, imageCaption) {
+    /* update image source */
+    $image.attr("src", imageLocation);
+    /* set caption text */
+    $caption.text(imageCaption);
+}

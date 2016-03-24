@@ -101,27 +101,28 @@ input {
 #prevArrow,
 #nextArrow {
     color: white;
-    font-size: 6em;
+    font-size: 4em;
     position: absolute;
-    top: 300px;
+    top: calc(100px + 30%);
     background: rgba(0,0,0,0);
     border: 2px solid white;
 }
 
 #prevArrow {
-    left: 0;
+    left: 1%;
 }
 
 #nextArrow {
-    right: 0;
+    right: 1%;
 }
 
 #exit {
     color: white;
     font-size: 2em;
+    display: block;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1%;
+    right: 50%;
     background: rgba(0,0,0,0);
     border: none;
     font-family: serif;
