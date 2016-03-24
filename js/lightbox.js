@@ -67,7 +67,7 @@ function updateImage(imageLocation, imageCaption) {
     /* update index */
     $index++;
     /* use index to get next image */
-    var newImage = $("#imageGallery a").get($index).getElementsByTagName("a");
+    var newImage = $("#gallery li").get($index).getElementsByTagName("a");
     /* get new image location and caption */
     var imageLocation = $(newImage).attr("href");
     var imageCaption =  $(newImage).children("img").attr("alt");
@@ -80,10 +80,10 @@ $prevArrow.on("click", function(event){
     /* update the index */
     $index--;
     /* get the previous image by index */
-    var newImage = $("#imageGallery a").get($index).getElementsByTagName("a");
+    var prevImage = $("#gallery li").get($index).getElementsByTagName("a");
     /* update the image location and caption */
-    var imageLocation = $(newImage).attr("href");
-    var imageCaption =  $(newImage).children("img").attr("alt");
+    var imageLocation = $(prevImage).attr("href");
+    var imageCaption =  $(prevImage).children("img").attr("alt");
     /* update the overlay */
     updateImage(imageLocation, imageCaption);
 });
