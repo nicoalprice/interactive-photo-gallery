@@ -53,29 +53,21 @@ $("#gallery a").click(function(event) {
 });
 
 /* When the next button is clicked... */
-    $nextArrow.on("click", function(event) {
-    /* update index */
-    $index++;
-    /* use index to get next image */
-    var nextImage = $("#gallery li").get($index).getElementsByTagName("a");
-    /* get new image location and caption */
-    var imageLocation = $(nextImage).attr("href");
-    var imageCaption =  $(nextImage).children("img").attr("alt");
-    /* update the overlay image */
-    updateImage(imageLocation, imageCaption);
+$nextArrow.on("click", function(event) {
+    nextImage();
+});
+/* When right arrow key is pressed... */
+$nextArrow.on("keypress", function(event){
+
 });
 
 /* When the previous button is clicked... */
 $prevArrow.on("click", function(event){
-    /* update the index */
-    $index--;
-    /* get the previous image by index */
-    var prevImage = $("#gallery li").get($index).getElementsByTagName("a");
-    /* update the image location and caption */
-    var imageLocation = $(prevImage).attr("href");
-    var imageCaption =  $(prevImage).children("img").attr("alt");
-    /* update the overlay */
-    updateImage(imageLocation, imageCaption);
+    previousImage();
+});
+/* When left arrow key is pressed... */
+prevArrow.on("keypress", function(event){
+
 });
 
 /* Hide overlay when exit button is clicked. */
@@ -91,4 +83,28 @@ function updateImage(imageLocation, imageCaption) {
     $image.attr("src", imageLocation);
     /* set caption text */
     $caption.text(imageCaption);
+}
+
+function nextImage() {
+     /* update index */
+    $index++;
+    /* use index to get next image */
+    var nextImage = $("#gallery li").get($index).getElementsByTagName("a");
+    /* get new image location and caption */
+    var imageLocation = $(nextImage).attr("href");
+    var imageCaption =  $(nextImage).children("img").attr("alt");
+    /* update the overlay image */
+    updateImage(imageLocation, imageCaption);
+}
+
+function previousImage() {
+    /* update the index */
+    $index--;
+    /* get the previous image by index */
+    var prevImage = $("#gallery li").get($index).getElementsByTagName("a");
+    /* update the image location and caption */
+    var imageLocation = $(prevImage).attr("href");
+    var imageCaption =  $(prevImage).children("img").attr("alt");
+    /* update the overlay */
+    updateImage(imageLocation, imageCaption);
 }
