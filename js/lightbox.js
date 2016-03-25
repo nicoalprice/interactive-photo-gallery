@@ -1,8 +1,7 @@
-/* Create a lightbox for viewing full size images when their thumbnails are clicked. */
+/* Treehouse Project #4: Interactive Photo Gallery */
+/* by Nicoal Price */
 
-/* Find a jQuery plugin for creating a photo gallery or write your own script. */
-
-/* The gallery must include the ability to click on photos and view them in a lightbox. */
+/* Create a lightbox for viewing full size images when their thumbnails are clicked. Find a jQuery plugin for creating a photo gallery or write your own script. The gallery must include the ability to click on photos and view them in a lightbox. */
 
 
 /*** OVERLAY ***/
@@ -25,11 +24,12 @@ $("#gallery a").click(function(event) {
 
     /* stop click from opening img url */
     event.preventDefault();
-
+    /* get image's href value */
     var imageLocation = $(this).attr("href");
+    /* get image's alt text to use as caption */
     var imageCaption =  $(this).children("img").attr("alt");
 
-     // call function to capture information about the clicked image
+     /* call function to capture info for the clicked image */
     updateImage(imageLocation, imageCaption);
 
     /* add image to overlay */

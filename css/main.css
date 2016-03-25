@@ -96,7 +96,7 @@ input {
 #overlay p {
     color: white;
     width: 46.875%; /* 600/1280px */
-    margin: 60px auto 0;
+    margin: 30px auto 0;
 }
 #prevArrow,
 #nextArrow {
