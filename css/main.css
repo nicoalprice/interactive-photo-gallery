@@ -117,18 +117,18 @@ input {
 #nextArrow {
     display: block;
     position: fixed;
-    bottom: 40%;
+    top: 50px;
     border: none;
     margin: 0;
-    width: 50px;
+    width: 10%;
 }
 
 #prevArrow {
-    left: 10px;
+    left: 35%;
 }
 
 #nextArrow {
-    right: 10px;
+    right: 35%;
 }
 
 #nextArrow img {
@@ -161,10 +161,24 @@ input {
     MEDIA QUERIES
 ========================== */
 
-@media screen and (min-width: 580px) {
+@media screen and (min-width: 500px) {
 
     .wrapper {
         width: 460px; /* two columns */
+    }
+
+    #prevArrow,
+    #nextArrow {
+        top: 30%;
+        width: 5%;
+    }
+
+    #nextArrow {
+        right: 15px;
+    }
+
+    #prevArrow {
+        left: 15px;
     }
 
     #overlay p {
@@ -180,6 +194,10 @@ input {
         width: 720px; /* three columns */
     }
 
+    #prevArrow,
+    #nextArrow {
+        top: 40%;
+    }
 
     #exit {
         width: 50px;
