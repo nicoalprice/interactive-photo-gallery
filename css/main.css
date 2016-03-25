@@ -108,6 +108,7 @@ input {
 }
 
 #overlay p {
+    display: block;
     color: white;
     width: 70%;
     font-size: .75em;
@@ -156,6 +157,7 @@ input {
 ========================== */
 
 @media screen and (min-width: 450px) {
+
     #prevArrow,
     #nextArrow {
         width: 7%;
@@ -171,7 +173,7 @@ input {
 
     #prevArrow,
     #nextArrow {
-        top: 50vh;
+        top: 35vh;
         width: 5%;
     }
 
