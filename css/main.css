@@ -66,6 +66,10 @@ input {
     margin-right: -60px;
 }
 
+#gallery a:hover {
+    opacity: 0.6;
+}
+
 #gallery li {
     padding-right: 60px;
     padding-bottom: 60px;
