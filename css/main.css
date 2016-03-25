@@ -9,6 +9,7 @@
 
 * {
     box-sizing: border-box;
+    font-family: 'Comfortaa', sans-serif;
 }
 
 ul,
@@ -107,31 +108,37 @@ input {
 
 #overlay p {
     color: white;
-    width: 46.875%; /* 600/1280px */
+    width: 70%;
+    font-size: .75em;
     margin: 30px auto 0;
 }
 
 #prevArrow,
 #nextArrow {
-    color: white;
-    position: absolute;
-    top: 50%;
+    display: block;
+    position: fixed;
+    bottom: 40%;
     border: none;
     margin: 0;
+    width: 50px;
 }
 
 #prevArrow {
-    left: 0;
+    left: 10px;
 }
 
 #nextArrow {
+    right: 10px;
+}
+
+#nextArrow img {
+    position: absolute;
     right: 0;
 }
 
 #nextArrow img,
 #prevArrow img {
-    width: 50%;
-    margin-top: 0;
+    width: 100%;
 }
 
 #exit {
@@ -160,6 +167,11 @@ input {
         width: 460px; /* two columns */
     }
 
+    #overlay p {
+        width: 46.875%; /* 600/1280px */
+        font-size: 1em;
+}
+
 }
 
 @media screen and (min-width: 840px) {
@@ -168,10 +180,11 @@ input {
         width: 720px; /* three columns */
     }
 
+
     #exit {
         width: 50px;
         height: 50px;
-}
+    }
 
 }
 
