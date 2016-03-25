@@ -57,23 +57,34 @@ $nextArrow.on("click", function(event) {
     nextImage();
 });
 /* When right arrow key is pressed... */
-$nextArrow.on("keypress", function(event){
-
+$("body").keydown(function(event){
+    if ( event.which == 39 ) {
+        nextImage();
+  }
 });
 
 /* When the previous button is clicked... */
 $prevArrow.on("click", function(event){
     previousImage();
 });
-/* When left arrow key is pressed... */
-prevArrow.on("keypress", function(event){
 
+/* When left arrow key is pressed... */
+$("body").keydown(function(event){
+    if ( event.which == 37 ) {
+        previousImage();
+  }
 });
 
 /* Hide overlay when exit button is clicked. */
 $exit.on("click", function() {
-    $overlay.fadeOut(1000);
-    $overlay.hide();
+    $overlay.fadeOut(1000).hide();
+});
+
+/* Hide overlay when esc key is pressed */
+$("body").keydown(function(event) {
+    if (event.which == 27) {
+    $overlay.fadeOut(1000).hide();
+    }
 });
 
 /*** FUNCTIONS ***/
