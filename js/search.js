@@ -18,10 +18,10 @@ $("#search").keyup(function() {
         /* if searched value matches alt keywords, show image */
         if($altText.toLowerCase().search($search.toLowerCase()) > -1) {
             /* show matching images */
-            $(this).slideDown();
+            $(this).show();
             /* hide image if no matches are found */
         } else {
-            $(this).hide();
+            $(this).fadeOut(500);
         }
     });
 });
