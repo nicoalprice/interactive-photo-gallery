@@ -120,7 +120,7 @@ input {
     top: 50px;
     border: none;
     margin: 0;
-    width: 10%;
+    width: 8%;
 }
 
 #prevArrow {
@@ -161,7 +161,15 @@ input {
     MEDIA QUERIES
 ========================== */
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 450px) {
+    #prevArrow,
+    #nextArrow {
+        width: 7%;
+    }
+
+}
+
+@media screen and (min-width: 580px) {
 
     .wrapper {
         width: 460px; /* two columns */
@@ -169,7 +177,8 @@ input {
 
     #prevArrow,
     #nextArrow {
-        top: 30%;
+/*        top: 35%;*/
+        top: 50vh;
         width: 5%;
     }
 
@@ -196,7 +205,7 @@ input {
 
     #prevArrow,
     #nextArrow {
-        top: 40%;
+        top: 50vh;
     }
 
     #exit {
