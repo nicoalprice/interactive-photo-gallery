@@ -7,9 +7,9 @@
 /*** OVERLAY ***/
 
 var $overlay = $("<div id='overlay'></div>");
-var $image = $("<img class='overlay-image'>");
+var $image = $("<img id='overlay-image'>");
 var $caption = $("<p></p>");
-var $exit = $('<button id="exit"><img src="images/icons/exit.png" alt="exit"></button>');
+var $exit = $('<div id="exit"><img src="images/icons/exit.png" alt="exit"></div>');
 var $prevArrow = $('<div id="prevArrow"><img src="images/icons/left-arrow.png" alt="previous" /></div>');
 var $nextArrow = $('<div id="nextArrow"><img src="images/icons/right-arrow.png" alt="next" /></div>');
 /* Keep track of image index for arrow buttons */
@@ -29,6 +29,9 @@ $("#gallery a").click(function(event) {
     /* get image's alt text to use as caption */
     var imageCaption =  $(this).children("img").attr("alt");
 
+    /* add exit button. */
+    $overlay.append($exit);
+
      /* call function to capture info for the clicked image */
     updateImage(imageLocation, imageCaption);
 
@@ -44,9 +47,6 @@ $("#gallery a").click(function(event) {
     /* add back and forward navigation buttons when lightbox is visible */
     $image.after($prevArrow);
     $image.before($nextArrow);
-
-      /* add exit button. */
-    $overlay.append($exit);
 
     /* show the overlay */
     $overlay.fadeIn(1500);

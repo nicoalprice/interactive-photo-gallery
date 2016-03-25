@@ -9,6 +9,7 @@
 
 * {
     box-sizing: border-box;
+    font-family: 'Comfortaa', sans-serif;
 }
 
 ul,
@@ -45,7 +46,7 @@ input {
     margin: auto;
     padding: 10px;
     width: 100%;
-    border-radius: 3px;
+    border-radius: 4px;
     border: 1px solid black;
     background: lightgrey;
 }
@@ -65,11 +66,16 @@ input {
     margin-right: -60px;
 }
 
-#gallery img {
+#gallery li {
     padding-right: 60px;
     padding-bottom: 60px;
     width: 260px;
     margin-right: -5px;
+    border-radius: 4px;
+}
+
+#gallery img {
+    border-radius: 4px;
 }
 
 
@@ -86,55 +92,68 @@ input {
     top: 0;
     left: 0;
     display: none;
+    padding-top: 100px;
 }
 
-#overlay img {
+#overlay-image {
     display: block;
-    margin: 100px auto 0;
+    margin: auto;
     width: 75%;
     max-width: 800px;
 }
 
+#overlay-image {
+    border-radius: 4px;
+}
+
 #overlay p {
     color: white;
-    width: 46.875%; /* 600/1280px */
+    width: 70%;
+    font-size: .75em;
     margin: 30px auto 0;
 }
+
 #prevArrow,
 #nextArrow {
-    color: white;
-    position: absolute;
-    top: 50%;
+    display: block;
+    position: fixed;
+    top: 50px;
     border: none;
     margin: 0;
+    width: 8%;
 }
 
 #prevArrow {
-    left: 1%;
+    left: 35%;
 }
 
 #nextArrow {
-    right: 1%;
+    right: 35%;
+}
+
+#nextArrow img {
+    position: absolute;
+    right: 0;
 }
 
 #nextArrow img,
 #prevArrow img {
-    width: 50%;
-    margin-top: 0;
+    width: 100%;
 }
 
 #exit {
-    color: white;
-    font-size: 2em;
     display: block;
-    position: absolute;
-    top: 1%;
-    right: 50%;
-    background: rgba(0,0,0,0);
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 0;
     border: none;
-    font-family: serif;
-    margin-top: 0;
-    padding-top: 0;
+}
+
+#exit img {
+    height: 100%;
+    padding: 10px;
 }
 
 
@@ -142,11 +161,39 @@ input {
     MEDIA QUERIES
 ========================== */
 
+@media screen and (min-width: 450px) {
+    #prevArrow,
+    #nextArrow {
+        width: 7%;
+    }
+
+}
+
 @media screen and (min-width: 580px) {
 
     .wrapper {
         width: 460px; /* two columns */
     }
+
+    #prevArrow,
+    #nextArrow {
+/*        top: 35%;*/
+        top: 50vh;
+        width: 5%;
+    }
+
+    #nextArrow {
+        right: 15px;
+    }
+
+    #prevArrow {
+        left: 15px;
+    }
+
+    #overlay p {
+        width: 46.875%; /* 600/1280px */
+        font-size: 1em;
+}
 
 }
 
@@ -154,6 +201,16 @@ input {
 
     .wrapper {
         width: 720px; /* three columns */
+    }
+
+    #prevArrow,
+    #nextArrow {
+        top: 50vh;
+    }
+
+    #exit {
+        width: 50px;
+        height: 50px;
     }
 
 }
