@@ -12,16 +12,16 @@ $("#search").keyup(function() {
     var $search = $(this).val();
 
     /* loop over each image */
-    $("#gallery img").each(function() {
+    $("#gallery li").each(function() {
         /* get alt text */
-        var $altText = $(this).attr("alt");
+        var $altText = $(this).find("img").attr("alt");
         /* if searched value matches alt keywords, show image */
         if($altText.toLowerCase().search($search.toLowerCase()) > -1) {
             /* show matching images */
-            $(this).slideDown();
+            $(this).show();
             /* hide image if no matches are found */
         } else {
-            $(this).hide();
+            $(this).fadeOut(500);
         }
     });
 });
