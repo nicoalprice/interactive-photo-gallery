@@ -91,13 +91,19 @@ input {
     top: 0;
     left: 0;
     display: none;
+    padding-top: 100px;
 }
 
-#overlay img {
+#overlay-image,
+#exit {
     display: block;
-    margin: 100px auto 0;
+    margin: auto;
     width: 75%;
     max-width: 800px;
+}
+
+#overlay-image {
+    border-radius: 4px;
 }
 
 #overlay p {
@@ -105,9 +111,11 @@ input {
     width: 46.875%; /* 600/1280px */
     margin: 30px auto 0;
 }
+
 #prevArrow,
 #nextArrow {
     color: white;
+    display: inline-block;
     position: absolute;
     top: 50%;
     border: none;
@@ -129,17 +137,22 @@ input {
 }
 
 #exit {
-    color: white;
-    font-size: 2em;
     display: block;
-    position: absolute;
-    top: 1%;
-    right: 50%;
-    background: rgba(0,0,0,0);
+    position: fixed;
+    top: 0;
+    left: 12.5%;
+    right: 12.5%;
     border: none;
-    font-family: serif;
-    margin-top: 0;
-    padding-top: 0;
+    height: 100px;
+/*    background: pink;*/
+}
+
+#exit img {
+    height: 25%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
 }
 
 
