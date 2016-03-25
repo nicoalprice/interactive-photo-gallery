@@ -101,11 +101,10 @@ input {
 #prevArrow,
 #nextArrow {
     color: white;
-    font-size: 4em;
     position: absolute;
     top: 50%;
-    background: rgba(0,0,0,0);
-    border: 2px solid white;
+    border: none;
+    margin: 0;
 }
 
 #prevArrow {
@@ -114,6 +113,12 @@ input {
 
 #nextArrow {
     right: 1%;
+}
+
+#nextArrow img,
+#prevArrow img {
+    width: 50%;
+    margin-top: 0;
 }
 
 #exit {
@@ -126,6 +131,8 @@ input {
     background: rgba(0,0,0,0);
     border: none;
     font-family: serif;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 
