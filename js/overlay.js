@@ -24,8 +24,10 @@ $("#gallery a").click(function(event) {
 
     /* stop click from opening img url */
     event.preventDefault();
+
     /* get image's href value */
     var imageLocation = $(this).attr("href");
+
     /* get image's alt text to use as caption */
     var imageCaption =  $(this).children("img").attr("alt");
 
